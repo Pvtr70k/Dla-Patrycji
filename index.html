@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ważna wiadmość</title>
+</head>
+<body>
+    <h1>Strona z ważną informacją</h1>
+    <p>Kliknij <a href="#" id="link">tutaj</a>, aby zobaczyć wiadomość.</p>
+
+    <div id="wiadomosc" style="display: none;">
+        <p>Cześć!</p>
+        <p>Czy Ty jesteś Patrycja?</p>
+        <p>Patryk Cię Kocha!</p>
+    </div>
+
+    <script>
+        document.getElementById('link').addEventListener('click', function(event) {
+            event.preventDefault(); // Zapobiegamy domyślnej akcji przekierowania
+            document.getElementById('wiadomosc').style.display = 'block'; // Pokazujemy ukrytą wiadomość
+        });
+    </script>
+</body>
+</html>
