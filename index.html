@@ -1,25 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ważna wiadmość</title>
-</head>
-<body>
-    <h1>Strona z ważną informacją</h1>
-    <p>Kliknij <a href="#" id="link">tutaj</a>, aby zobaczyć wiadomość.</p>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffb6c1, #ff69b4);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
 
-    <div id="wiadomosc" style="display: none;">
-        <p>Cześć!</p>
-        <p>Czy Ty jesteś Patrycja?</p>
-        <p>Patryk Cię Kocha!</p>
-    </div>
+#question-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+}
 
-    <script>
-        document.getElementById('link').addEventListener('click', function(event) {
-            event.preventDefault(); // Zapobiegamy domyślnej akcji przekierowania
-            document.getElementById('wiadomosc').style.display = 'block'; // Pokazujemy ukrytą wiadomość
-        });
-    </script>
-</body>
-</html>
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#yes-btn {
+    background-color: #ff4d4d;
+    color: white;
+    transition: 0.3s;
+}
+
+#no-btn {
+    background-color: #666;
+    color: white;
+    transition: 0.3s;
+}
+
+#yes-btn:hover {
+    background-color: #ff1a1a;
+}
+
+#no-btn:hover {
+    background-color: #444;
+}
+
+#card {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animacja serduszek */
+@keyframes hearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 30px;
+    animation: hearts 4s linear infinite;
+}
